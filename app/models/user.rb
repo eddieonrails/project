@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   has_many :movies
   has_many :comments
 
+  before_save :create_remember_token
+
+
+
   validates :name,
             :presence => true ,
             :length => { :minimum => 2}
@@ -49,4 +53,10 @@ class User < ActiveRecord::Base
 
 
     end
+
+  private
+
+  def create_remember_token
+    self.remember_token = SecureRandom.urlsafe_base64
+  end
   end

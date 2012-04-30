@@ -15,7 +15,9 @@
         render 'new'
 
       else
-        render '/home/index'
+        sign_in user
+        redirect_to user
+
       end
     end
 

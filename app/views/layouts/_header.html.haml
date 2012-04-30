@@ -1,3 +1,5 @@
+
+
 = stylesheet_link_tag    "application", :media => "all"
 
 .wrapper
@@ -10,9 +12,17 @@
   =link_to "movies" , movies_path
   =link_to "recommended movies"
   =link_to "reviews" ,comments_path
+
+
+
   #login
 
-    =link_to 'login' , new_session_path
+    = if signed_in?
+      =current_user.username
+
+      =link_to 'logout', '/session/delete'
+
+    =link_to 'login', new_session_path
 
 
   .name
