@@ -17,12 +17,13 @@
 
   #login
 
-    = if signed_in?
+    -if signed_in?
       =current_user.username
-
       =link_to 'logout', '/session/delete'
+    -else
+      =link_to 'login', new_session_path
 
-    =link_to 'login', new_session_path
+
 
 
   .name

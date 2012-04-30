@@ -1,13 +1,11 @@
 
 = @comments.each do |comment|
   %td
-    = comment.title
+    = comment.movie_title
   %td
     = comment.rating
   %td
     =comment.review
-  %td
-    =comment.username
 
     =link_to "review" ,new_comment_path
     =link_to "check reviews"

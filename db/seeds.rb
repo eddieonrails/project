@@ -42,8 +42,8 @@ Movie.create(title: 'iron man',
              lead_actor:  'Robert Downey Jr' )
 
 Comment.create( rating: 5 ,
-                username: 'edwin',
-                title: 'Pink Panther' ,
+                user_username: 'edwin',
+                movie_title: 'Pink Panther' ,
                 review: 'Awesome stuff')
 
 Movie.create(title: 'The Shawshank Redemption',

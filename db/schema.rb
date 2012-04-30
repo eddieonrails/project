@@ -16,20 +16,20 @@ ActiveRecord::Schema.define(:version => 20120430040058) do
   create_table "comments", :force => true do |t|
     t.text     "review"
     t.integer  "rating"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "title"
-    t.string   "username"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "user_username"
+    t.string   "movie_title"
   end
 
   create_table "movies", :force => true do |t|
     t.string   "title"
     t.integer  "year"
     t.string   "genre"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "lead_actor"
-    t.string   "username"
+    t.string   "user_username"
   end
 
   create_table "users", :force => true do |t|

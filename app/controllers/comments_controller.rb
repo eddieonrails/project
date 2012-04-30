@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+
   def index
     @comments = Comment.all
 
@@ -12,9 +13,11 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
-    respond_to do |format|
-      format.render html: @comments
+    @comment = Comment.find(params[:id])
 
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @comment}
     end
   end
 
@@ -41,6 +44,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+         @comment.user_username = current_user.username
         format.html { redirect_to @comment, notice: 'comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
