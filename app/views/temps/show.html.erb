@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rating:</b>
+  <%= @temp.rating %>
+</p>
+
+<p>
+  <b>Review:</b>
+  <%= @temp.review %>
+</p>
+
+
+<%= link_to 'Edit', edit_temp_path(@temp) %> |
+<%= link_to 'Back', temps_path %>

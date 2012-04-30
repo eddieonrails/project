@@ -1,0 +1,25 @@
+= stylesheet_link_tag    "application", :media => "all"
+
+.wrapper
+  .header
+    %h1#logo
+      MoviesNow
+      =image_tag "images.jpg" , :size => "40x40"
+  #details
+  =link_to "home", home_index_path
+  =link_to "movies" , movies_path
+  =link_to "recommended movies"
+  =link_to "reviews" ,comments_path
+  #login
+
+    =link_to 'login' , new_session_path
+
+
+  .name
+
+
+
+
+%hr
+
+
